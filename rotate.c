@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotates.c                                          :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:35:36 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/06 18:44:46 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/06 18:49:31 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,26 @@ void	rotate(t_list **stack)
 	last->next = first;
 }
 
+//Shift up all elements of stack a by 1.
+//The first element becomes the last one
 void	ra(t_list **lst)
 {
 	rotate(lst);
 	ft_printf("ra\n");
 }
 
+//Shift up all elements of stack b by 1.
+//The first element becomes the last one
 void	rb(t_list **lst)
 {
 	rotate(lst);
 	ft_printf("rb\n");
+}
+//Shift up all elements of stack a & b by 1.
+//The first element becomes the last one
+void	rr(t_list **lista, t_list **listb)
+{
+	rotate(lista);
+	rotate(listb);
+	ft_printf("rr\n");
 }
