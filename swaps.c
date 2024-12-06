@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:18:35 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/06 17:32:26 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/06 18:31:33 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	swap(t_list *list)
 		second->content = temp_c;
 	}
 }
+
 // Swap the first 2 elements at the top of stack a.
 //Do nothing if there is only one or no elements.
 void	sa(t_list **list)
