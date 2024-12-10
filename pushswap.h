@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:01:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/10 15:07:38 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/10 17:21:14 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/ft_printf.h"
 # include "libft/libft.h"
 
+void	normalise(t_list **stack);
 void	print_values(t_list *stack);
 void	k_sort(t_list *stack_a, t_list *stack_b);
 //Swaps

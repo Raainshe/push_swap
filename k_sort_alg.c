@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:28:53 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/10 15:52:29 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/10 17:21:59 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	k_sort(t_list *stack_a, t_list *stack_b)
 	int	stackb_size;
 
 	d_line = ft_sqrt(ft_lstsize(stack_a));
+	normalise(&stack_a);
 	ft_printf("sqrt: %i\n", d_line);
 	while (ft_lstsize(stack_a) != 0)
 	{

@@ -11,7 +11,8 @@ SRC_FILES = push_swap.c\
 			pushes.c\
 			reverse_rotate.c\
 			rotate.c\
-			swaps.c 
+			swaps.c \
+			normalise.c
 
 
 OBJ_FILES = $(SRC_FILES:%.c=%.o)
