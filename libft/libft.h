@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 13:05:55 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/11/27 14:49:05 by rmakoni          ###   ########.fr       */
+/*   Created: 2024/12/10 13:36:36 by rmakoni           #+#    #+#             */
+/*   Updated: 2024/12/10 14:47:52 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 
+// Mathematical Functions
+int					ft_sqrt(int nb);
 // Character Transformations
 int					ft_toupper(int c);
 int					ft_tolower(int c);

@@ -52,6 +52,8 @@ SRC_FILES = ft_atoi.c \
             ft_lstlast_bonus.c \
             ft_lstmap_bonus.c \
             ft_lstnew_bonus.c \
+            ft_lstsize_bonus.c \
+            ft_sqrt.c \
             ft_lstsize_bonus.c\
             ft_gethex.c\
 			ft_printf.c\
