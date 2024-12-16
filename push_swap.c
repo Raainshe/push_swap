@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 13:23:26 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/10 15:54:19 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/16 18:51:00 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_values(t_list *stack)
 
 	while (stack != NULL)
 	{
-		num = (int)stack->content;
+		num = (int)(intptr_t)stack->content;
 		ft_printf("%i\n", num);
 		stack = stack->next;
 	}
@@ -65,7 +65,6 @@ int	main(int argc, char **argv)
 	t_list	*stacka;
 	t_list	*stackb;
 	size_t	a_size;
-	int		listsize;
 
 	stackb = NULL;
 	if (argc < 2)
@@ -73,7 +72,6 @@ int	main(int argc, char **argv)
 	stacka = create_list(argv, &a_size, argc - 1);
 	if (!stacka)
 		return (ft_printf("Error with the data!"), 1);
-	listsize = ft_lstsize(stacka);
 	if (decision_alg(a_size) == 1)
 		k_sort(stacka, stackb);
 	return (0);
