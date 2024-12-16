@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:28:53 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/16 10:47:07 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/16 13:21:41 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ int	shortest_route(t_list *stack_b)
 	int	pos_of_largest;
 	int	largest;
 
+	if (!stack_b)
+		return (0);
 	i = 0;
 	size = ft_lstsize(stack_b);
 	largest = (int)stack_b->content;
+	pos_of_largest = 0;
 	while (stack_b != NULL)
 	{
 		if ((int)stack_b->content > largest)
@@ -66,7 +69,7 @@ void	k_sort(t_list *stack_a, t_list *stack_b)
 	int	stackb_size;
 
 	d_line = ft_sqrt(ft_lstsize(stack_a));
-	normalise(&stack_a);
+	//normalise(&stack_a);
 	ft_printf("sqrt: %i\n", d_line);
 	while (ft_lstsize(stack_a) != 0)
 	{
@@ -83,5 +86,6 @@ void	k_sort(t_list *stack_a, t_list *stack_b)
 		else
 			ra(&stack_a);
 	}
+	ft_printf("\nsend to stack a\n");
 	send_to_a(&stack_a, &stack_b);
 }
