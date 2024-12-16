@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 13:36:36 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/10 14:47:52 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/16 12:17:33 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 typedef struct s_list
 {
 	void			*content;
+	int				number;
 	struct s_list	*next;
 }					t_list;
 

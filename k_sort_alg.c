@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:28:53 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/14 16:44:55 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:47:07 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	shortest_route(t_list *stack_b)
 	largest = (int)stack_b->content;
 	while (stack_b != NULL)
 	{
-		if (stack_b->content > largest)
+		if ((int)stack_b->content > largest)
 		{
 			largest = (int)stack_b->content;
 			pos_of_largest = i;
@@ -43,9 +43,9 @@ void	send_to_a(t_list **stack_a, t_list **stack_b)
 {
 	int	direction;
 
-	while (ft_lstsize(stack_b) != 0)
+	while (ft_lstsize(*stack_b) != 0)
 	{
-		direction = shortest_route(stack_b);
+		direction = shortest_route(*stack_b);
 		if (direction > 0)
 		{
 			while (direction--)
