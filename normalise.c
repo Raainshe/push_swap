@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:00:34 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/17 12:32:50 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/17 14:22:41 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,58 +33,83 @@ int	has_duplicates(t_list *stack)
 	return (0);
 }
 
-// Finds largest value in stack
-int	get_largest(t_list *stack)
+int	*create_sorted_array(t_list *stack, int size)
 {
-	t_list	*largest;
+	int	*sorted_array;
+	int	i;
 
-	largest = stack;
-	while (stack != NULL)
+	sorted_array = malloc(size * sizeof(int));
+	i = 0;
+	if (!sorted_array)
+		return (NULL);
+	while (stack && i < size)
 	{
-		if ((int)(intptr_t)largest->content < (int)(intptr_t)stack->content)
-			largest = stack;
+		sorted_array[i] = (int)(intptr_t)stack->content;
 		stack = stack->next;
+		i++;
 	}
-	return ((int)(intptr_t)largest->content);
+	return (sorted_array);
 }
 
-// Finds smallest value in stack
-int	get_smallest(t_list *stack)
+void	sort_array(int *arr, int size)
 {
-	t_list	*smallest;
+	int	i;
+	int	temp;
+	int	j;
 
-	smallest = stack;
-	while (stack != NULL)
+	j = 0;
+	i = 0;
+	temp = 0;
+	while (i < size - 1)
 	{
-		if ((int)(intptr_t)smallest->content > (int)(intptr_t)stack->content)
-			smallest = stack;
-		stack = stack->next;
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
 	}
-	return ((int)(intptr_t)smallest->content);
 }
 
-// Normalizes stack values
 void	normalise(t_list **stack)
 {
-	int		largest;
-	int		smallest;
-	int		k;
 	t_list	*current;
-	double	i_current;
+	int		*sorted_array;
+	int		size;
+	int		i;
+	int		j;
+	int		original_value;
 
 	if (has_duplicates(*stack))
 		exit(EXIT_FAILURE);
-	k = ft_sqrt(ft_lstsize(*stack));
-	largest = get_largest(*stack);
-	smallest = get_smallest(*stack);
-	if (*stack == NULL || (*stack)->next == NULL || largest == smallest)
-		return ;
+	size = ft_lstsize(*stack);
+	sorted_array = create_sorted_array(*stack, size);
+	if (!sorted_array)
+		exit(EXIT_FAILURE);
+	sort_array(sorted_array, size);
 	current = *stack;
-	while (current != NULL)
+	i = 0;
+	while (current && i < size)
 	{
-		i_current = (int)(intptr_t)current->content;
-		current->content = (void *)(intptr_t)((int)(k * ((i_current - smallest)
-						/ (double)(largest - smallest))));
+		original_value = (int)(intptr_t)current->content;
+		j = 0;
+		while (j < size)
+		{
+			if (sorted_array[j] == original_value)
+			{
+				current->content = (void *)(intptr_t)j;
+				break ;
+			}
+			j++;
+		}
 		current = current->next;
+		i++;
 	}
+	free(sorted_array);
 }

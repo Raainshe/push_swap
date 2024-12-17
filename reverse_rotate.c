@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:50:12 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/06 19:22:03 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/17 15:14:55 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	reverse_rotate(t_list **stack)
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	last = *stack;
-	while (last->next == NULL)
+	second_last = NULL;
+	while (last->next != NULL)
 	{
 		second_last = last;
 		last = last->next;
