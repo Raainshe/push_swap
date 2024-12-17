@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:01:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/10 20:58:35 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/17 12:19:12 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void	normalise(t_list **stack);
 void	print_values(t_list *stack);
-void	k_sort(t_list *stack_a, t_list *stack_b);
+void	k_sort(t_list **stack_a, t_list **stack_b);
 // Swaps
 void	sa(t_list **list);
 void	sb(t_list **list);
