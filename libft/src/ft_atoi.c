@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:14:03 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/10/21 14:18:26 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:15:20 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	is_space(char c)
 /// @param str A pointer to a null-terminated string that
 /// contains the number to be converted.
 /// @return The function returns the integer value of the string.
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	i_minus;
-	int	num;
+	int		i;
+	int		i_minus;
+	long	num;
 
 	i = 0;
 	i_minus = 0;

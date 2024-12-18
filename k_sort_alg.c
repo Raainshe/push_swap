@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:28:53 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/17 13:41:37 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/17 16:24:36 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,4 @@ void	k_sort(t_list **stack_a, t_list **stack_b)
 			ra(stack_a);
 	}
 	send_to_a(stack_a, stack_b);
-	print_values(*stack_a);
 }

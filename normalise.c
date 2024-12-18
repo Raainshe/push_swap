@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:00:34 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/17 14:22:41 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:26:01 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,10 @@ void	normalise(t_list **stack)
 	int		original_value;
 
 	if (has_duplicates(*stack))
+	{
+		ft_printf("Error");
 		exit(EXIT_FAILURE);
+	}
 	size = ft_lstsize(*stack);
 	sorted_array = create_sorted_array(*stack, size);
 	if (!sorted_array)
