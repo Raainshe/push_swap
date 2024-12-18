@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:00:34 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/18 15:04:31 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/18 16:02:42 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	has_duplicates(t_list *stack)
 		checker = current->next;
 		while (checker != NULL)
 		{
-			if ((int)(intptr_t)current->content == (int)(intptr_t)checker->content)
+			if ((int)(intptr_t)current->content ==
+				(int)(intptr_t)checker->content)
 				return (1);
 			checker = checker->next;
 		}
@@ -77,25 +78,13 @@ void	sort_array(int *arr, int size)
 	}
 }
 
-void	normalise(t_list **stack)
+void	assign_normalised_values(t_list **stack, int *sorted_array, int size)
 {
 	t_list	*current;
-	int		*sorted_array;
-	int		size;
 	int		i;
 	int		j;
 	int		original_value;
 
-	if (has_duplicates(*stack))
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
-	size = ft_lstsize(*stack);
-	sorted_array = create_sorted_array(*stack, size);
-	if (!sorted_array)
-		exit(EXIT_FAILURE);
-	sort_array(sorted_array, size);
 	current = *stack;
 	i = 0;
 	while (current && i < size)
@@ -114,5 +103,18 @@ void	normalise(t_list **stack)
 		current = current->next;
 		i++;
 	}
+}
+
+void	normalise(t_list **stack)
+{
+	int	*sorted_array;
+	int	size;
+
+	size = ft_lstsize(*stack);
+	sorted_array = create_sorted_array(*stack, size);
+	if (!sorted_array)
+		exit(EXIT_FAILURE);
+	sort_array(sorted_array, size);
+	assign_normalised_values(stack, sorted_array, size);
 	free(sorted_array);
 }

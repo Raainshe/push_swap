@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 16:01:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/18 14:19:03 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:32:29 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	rr(t_list **lista, t_list **listb);
 void	rra(t_list **lista);
 void	rrb(t_list **listb);
 void	rrr(t_list **lista, t_list **listb);
+
+int		has_duplicates(t_list *stack);
 
 #endif
