@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:00:34 by rmakoni           #+#    #+#             */
-/*   Updated: 2024/12/18 14:26:01 by rmakoni          ###   ########.fr       */
+/*   Updated: 2024/12/18 15:04:31 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	normalise(t_list **stack)
 
 	if (has_duplicates(*stack))
 	{
-		ft_printf("Error");
+		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
 	size = ft_lstsize(*stack);
